@@ -12,6 +12,9 @@ int main ()
     float scale = 0.004f;
 
     sf::Clock clock;
+    sf::Time previousTime = clock.getElapsedTime();
+    sf::Time currentTime;
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -29,17 +32,19 @@ int main ()
         if (isPressed(Down))
             offset_y -= 16.f;
             
-        if (isPressed(Add))
+        if (isPressed(Num1))
             scale *= 1.25f;
-        if (isPressed(Subtract))
+        if (isPressed(Num2))
             scale /= 1.25f;
 
         drawSet(window, offset_x, offset_y, scale);
 
-        printf("FPS: %f;\n", 1 / clock.restart().asSeconds());
-
         window.display();
         window.clear();
+
+        currentTime = clock.getElapsedTime();
+        printf("FPS: %f;\n", 1.f / (currentTime.asSeconds() - previousTime.asSeconds()));
+        previousTime = currentTime;
     }
 
     return 0;

@@ -99,19 +99,18 @@ void drawSet(sf::RenderWindow &window, float offset_x, float offset_y, float sca
                 __m256 xy = _mm256_mul_ps(x_i, y_i);
 
                 __m256 r2  = _mm256_add_ps(x2, y2);
-                __m256 cmp = _mm256_cmp_ps(_mm256_set1_ps(MaxRadius), r2, _CMP_GT_OQ);
+                __m256 cmp = _mm256_cmp_ps(r2, _mm256_set1_ps(MaxRadius), _CMP_LE_OQ);
 
                 if(!_mm256_movemask_ps(cmp))
                     break;
 
-                __m256i iterators_new = _mm256_sub_epi32(iterators, _mm256_castps_si256(cmp));
-                iterators = iterators_new;
+                iterators = _mm256_sub_epi32(iterators, _mm256_castps_si256(cmp));
 
                 x_i = _mm256_add_ps(_mm256_sub_ps (x2, y2), x0); 
                 y_i = _mm256_add_ps(_mm256_add_ps (xy, xy), y0);
             }
 
-            uint32_t *iteratorsArray = (uint32_t *) &iterators;
+            unsigned int *iteratorsArray = (unsigned int *) &iterators;
 
             for (unsigned int point_idx = 0; point_idx < 8; point_idx++)
             {

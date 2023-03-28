@@ -15,9 +15,6 @@
 static const int Width  = 800;
 static const int Height = 800;
 
-static const float Step_x = 1 / Width;
-static const float Step_y = 1 / Height;
-
 static const int MaxFramerateLimit  = 30;
 static const int MaxIterationNumber = 256;
 
