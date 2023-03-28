@@ -28,7 +28,7 @@ CXXFLAGS ?= -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ 				   \
 LINKFLAGS ?= -lsfml-graphics -lsfml-window -lsfml-system
 
 # Configure program perfomance boost flags.
-FASTFLAGS ?= -O3 -mavx # -DFAST
+FASTFLAGS ?= -O3 -mavx -mavx512dq # -DSLOW # <-- Slow flag for debug and tests
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
