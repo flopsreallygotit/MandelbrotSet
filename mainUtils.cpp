@@ -6,7 +6,7 @@ sf::Color pickColor (unsigned int n)
 {
     n %= 256;
 
-    return sf::Color{(unsigned char) n - 255 % n,
+    return sf::Color{(unsigned char) (n / 8) * 32,
                      (unsigned char) (n % 2) * 255 % n, 
                      (unsigned char) (n / 255) * 128};
 }
