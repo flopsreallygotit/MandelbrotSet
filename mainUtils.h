@@ -2,6 +2,7 @@
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -28,7 +29,7 @@ static const float MaxRadius = 100.f;
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+sf::Color pickColor (unsigned int n);
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

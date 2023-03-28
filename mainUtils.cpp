@@ -2,6 +2,17 @@
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+sf::Color pickColor (unsigned int n)
+{
+    n %= 256;
+
+    return sf::Color{(unsigned char) n - 255 % n,
+                     (unsigned char) (n % 2) * 255 % n, 
+                     (unsigned char) (n / 255) * 128};
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #ifndef FAST
 
 void drawSet(sf::RenderWindow &window, float offset_x, float offset_y, float scale)
@@ -11,18 +22,18 @@ void drawSet(sf::RenderWindow &window, float offset_x, float offset_y, float sca
     float center_x = Width  / 2.f + offset_x;
     float center_y = Height / 2.f + offset_y;
 
-    for (int y = 0; y < Height; y++)
+    for (unsigned int y = 0; y < Height; y++)
     {
         float y0 = ((float) y - center_y) * scale;
 
-        for (int x = 0; x < Width; x++)
+        for (unsigned int x = 0; x < Width; x++)
         {
             float x0 = ((float) x - center_x) * scale;
 
             float x_i = x0;  
             float y_i = y0;  
 
-            int iterator = 0;
+            unsigned int iterator = 0;
             while (iterator < MaxIterationNumber)
             {
                 float x2 = x_i * x_i;
@@ -41,7 +52,8 @@ void drawSet(sf::RenderWindow &window, float offset_x, float offset_y, float sca
             rectangle.setPosition((float) x, (float) y);
 
             if (iterator < MaxIterationNumber)
-                rectangle.setFillColor(sf::Color{(unsigned char)(iterator * 5),(unsigned char) (iterator * 10), 0});
+                rectangle.setFillColor(pickColor(iterator));
+
             else
                 rectangle.setFillColor(sf::Color::Black);
 
