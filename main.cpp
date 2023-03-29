@@ -7,16 +7,18 @@ int main ()
     sf::RenderWindow window(sf::VideoMode(Width, Height), "Mandelbrot Set");
     window.setFramerateLimit(MaxFramerateLimit);
 
+    sf::Image image;
+    image.create(Width, Height, sf::Color::Red);
+
     float offset_x = 64;
     float offset_y = 0;
     float scale = 0.004f;
 
     sf::Clock clock;
-    sf::Time previousTime = clock.getElapsedTime();
-    sf::Time currentTime;
-
     while (window.isOpen())
     {
+        clock.restart();
+
         sf::Event event;
         while (window.pollEvent(event))
             if (event.type == sf::Event::Closed)
@@ -37,14 +39,19 @@ int main ()
         if (isPressed(Num2))
             scale /= 1.25f;
 
-        drawSet(window, offset_x, offset_y, scale);
+        drawSet(image, offset_x, offset_y, scale);
 
+        sf::Texture texture;
+        texture.loadFromImage(image);
+
+        sf::Sprite sprite;
+        sprite.setTexture(texture);   
+
+        window.draw(sprite);
         window.display();
         window.clear();
 
-        currentTime = clock.getElapsedTime();
-        printf("FPS: %f;\n", 1.f / (currentTime.asSeconds() - previousTime.asSeconds()));
-        previousTime = currentTime;
+        printf("FPS: %f;\n", 1.f / (clock.getElapsedTime().asSeconds()));
     }
 
     return 0;
