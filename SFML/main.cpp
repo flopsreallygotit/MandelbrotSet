@@ -10,9 +10,11 @@ int main ()
     sf::Image image;
     image.create(Width, Height, sf::Color::Red);
 
-    float offset_x = 64;
-    float offset_y = 0;
+    float offset_x = 64.f;
+    float offset_y = 0.f;
     float scale = 0.004f;
+
+    unsigned int counter = 0;
 
     sf::Clock clock;
     while (window.isOpen())
@@ -51,7 +53,10 @@ int main ()
         window.display();
         window.clear();
 
-        printf("FPS: %f;\n", 1.f / (clock.getElapsedTime().asSeconds()));
+        if (counter % 10 == 0)
+            printf("FPS: %f;\n", 1.f / (clock.getElapsedTime().asSeconds()));
+
+        counter++;
     }
 
     return 0;

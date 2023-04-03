@@ -19,7 +19,7 @@ static const int MaxIterationNumber = 256;
 
 static const float MaxRadius = 100.f;
 
-static const int CalculationLoopCount = 1;
+static const int CalculationLoopCount = 10;
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
