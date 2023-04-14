@@ -21,7 +21,7 @@ First clone repo:
 git clone "https://github.com/flopsreallygotit/MandelbrotSet.git"
 ```
 
-Then switch to repo directory, then switch to SFML folder and type this:
+Then switch to repo directory, switch to SFML folder and type this:
 ```
 make
 ./main
