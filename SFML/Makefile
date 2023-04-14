@@ -44,7 +44,7 @@ DEPENDS  ?= mainUtils.h
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Configure object directory name.
-OBJDIR ?= ./obj/
+OBJDIR ?= ./Objects/
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
