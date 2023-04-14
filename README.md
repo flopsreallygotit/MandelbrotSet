@@ -60,6 +60,9 @@ We can calculate 8 points at once using intrinsic functions. Intrinsic function 
 
 ## Performance
 
+> Calculation loop count: 100
+> Number of values for getting average: 3
+
 | Version | Compilation flags       | FPS            | Speed Growth |
 | ------  | :---------------------: | :------------: | :----------: |
 | SLOW    | None                    | 0.629 +- 0.029 | None         |
