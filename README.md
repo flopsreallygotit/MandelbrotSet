@@ -3,7 +3,7 @@ For average fractal enjoyers.
 
 ## Overview
 
-The goal of this project is implementing MandelbrotSet points calculation algorithm speed in the most effecient way.
+The goal of this project is implementing Mandelbrot Set points calculation speed in the most effecient way.
 
 To maximize performance we are going to use SSE instructions.
 
