@@ -12,7 +12,7 @@ To maximize performance we are going to use SSE instructions.
 
 ![image](https://user-images.githubusercontent.com/89828695/232138172-817596b2-c1dd-4085-a99c-129c227e5205.png)
 
-The Mandelbrot set is an example of a fractal in mathematics. The Mandelbrot set can be explained with the equation: $z_{n + 1} = z_{n} ^ 2 + c$. In that equation, c and z are complex numbers and n n is zero or a positive integer (natural number). Starting with z_0 = 0, c is in the Mandelbrot set if the absolute value of z_n never becomes larger than a certain number (that number depends on c), no matter how large n gets.
+The Mandelbrot set is an example of a fractal in mathematics. The Mandelbrot set can be explained with the equation: $z_{n + 1} = z_{n} ^ 2 + c$. In that equation, c and z are complex numbers and n n is zero or a positive integer (natural number). Starting with $z_0$ = 0, c is in the Mandelbrot set if the absolute value of $z_n$ never becomes larger than a certain number (that number depends on c), no matter how large n gets.
 
 ## Quick Start
 
