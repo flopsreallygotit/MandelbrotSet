@@ -33,10 +33,6 @@ Don't forget to change flags in Makefile. Now you can research the SSE instructi
 
 We can calculate each point iteratively.
 
-## Optimizing with SSE instructions
-
-We can calculate 8 points at once using intrinsic functions. Intrinsic function I won't show the example of code, because it's a bit difficult to perceive. Better check it in SFML/mainUtils.cpp.
-
 ~~~C++
 float x_i = x0;  
 float y_i = y0;  
@@ -57,6 +53,10 @@ while (iterator < MaxIterationNumber)
     iterator++;
 }
 ~~~
+
+## Optimizing with SSE instructions
+
+We can calculate 8 points at once using intrinsic functions. Intrinsic function I won't show the example of code, because it's a bit difficult to perceive. Better check it in SFML/mainUtils.cpp.
 
 ## Performance
 
