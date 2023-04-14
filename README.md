@@ -7,8 +7,12 @@ The goal of this project is implementing MandelbrotSet points calculation algori
 
 To maximize performance we are going to use SSE instructions.
 
-> CPU: Intel Core i5 11300H
+> CPU: Intel Core i5 11300H \
 > Tests were conducted on 800 x 600 Background image and 236 x 127 Foreground image
+
+![image](https://user-images.githubusercontent.com/89828695/232138172-817596b2-c1dd-4085-a99c-129c227e5205.png)
+
+The Mandelbrot set is an example of a fractal in mathematics. The Mandelbrot set can be explained with the equation: $z_{n + 1} = z_{n} ^ 2 + c$. In that equation, c and z are complex numbers and n n is zero or a positive integer (natural number). Starting with z_0 = 0, c is in the Mandelbrot set if the absolute value of z_n never becomes larger than a certain number (that number depends on c), no matter how large n gets.
 
 ## Quick Start
 
@@ -24,10 +28,6 @@ make
 ```
 
 Don't forget to change flags in Makefile. Now you can research the SSE instructions optimization by yourself!
-
-## Overview
-
-The Mandelbrot set is an example of a fractal in mathematics. The Mandelbrot set can be explained with the equation: $z_{n + 1} = z_{n} ^ 2 + c$. In that equation, c and z are complex numbers and n n is zero or a positive integer (natural number). Starting with z_0 = 0, c is in the Mandelbrot set if the absolute value of z_n never becomes larger than a certain number (that number depends on c), no matter how large n gets.
 
 ## First approach
 
